@@ -24,7 +24,12 @@ python manage.py startapp games
 python manage.py makemigrations
 python manage.py migrate
 ```
-Inicio do projeto: http://127.0.0.1:8000/accounts/login/
+Inicio do projeto: http://127.0.0.1:8000/accounts/login/ <br>
+usuário: Gabriel<br>
+senha: testanto<br>
+
+
+https://github.com/biellos22/pdois_bd/assets/108537753/d15d832f-c10a-46ff-9e86-5347d0d7689a
 
 
 
