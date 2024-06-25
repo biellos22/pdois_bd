@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Jogo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #292828;
+            margin: 0;
+            padding: 20px;
+            padding-top: 20%;
+        }
+        .delete-game {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .delete-game h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .delete-game p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .delete-game form {
+            margin-top: 10px;
+        }
+        .delete-game button {
+          color: white;
+          background-color: #292828;
+          border: 1px solid #292828;
+          border-radius: 5px;
+          box-shadow: 0 0 15px rgba(189, 230, 44, 0.1);
+          margin-bottom: 10px;
+          padding: 10px;
+          color: #fff;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .delete-game button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="delete-game">
+        <h1>Deletar Game</h1>
+        <p>Tem certeza de que deseja excluir "{{ game.title }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar</button>
+        </form>
+    </div>
+</body>
+</html>

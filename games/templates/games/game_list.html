@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Jogos</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Lista de Jogos</h2>
+        <ul class="game-list">
+            {% for game in games %}
+            <li>
+                <span class="game-name">{{ game.nome }}</span>
+                <span class="game-details">: {{ game.empresa }} - {{ game.data_de_lancamento }}</span>
+                <span class="game-actions">
+                    <a href="{% url 'game_update' game.pk %}">Editar</a>
+                    <a href="{% url 'game_delete' game.pk %}">Excluir</a>
+                </span>
+            </li>
+            {% empty %}
+            <li>Nenhum jogo disponível.</li>
+            {% endfor %}
+        </ul>
+        <div class="links">
+            <a href="{% url 'add_game' %}">Adicionar Jogo</a>
+            <br>
+            <a href="{% url 'inicial' %}">Cancelar</a>
+        </div>
+    </div>
+</body>
+</html>

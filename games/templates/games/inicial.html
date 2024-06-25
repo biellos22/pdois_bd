@@ -1,0 +1,36 @@
+<!-- templates/games/inicial.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Site de Jogos{% endblock %}</title>
+    <!-- Incluir o CSS personalizado -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site de Jogos</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'game_list' %}">Lista de Jogos</a></li>
+            <li><a href="{% url 'add_game' %}">Adicionar Jogo</a></li><br>
+            <li>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Sair</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site de Jogos. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
