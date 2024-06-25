@@ -24,4 +24,8 @@ python manage.py startapp games
 python manage.py makemigrations
 python manage.py migrate
 ```
-Inicio do projeto: http://127.0.0.1:8000/register/
+Inicio do projeto: http://127.0.0.1:8000/accounts/login/
+
+
+
+link youtube: https://youtu.be/bEfnIMtVQSU
